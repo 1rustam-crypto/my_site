@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Команда</title>
+    <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        /* Говорим браузеру плавно менять фон и текст у всего сайта */
+        body, .card, .navbar, h1, p, span, button {
+            transition: background-color 0.5s ease, color 0.5s ease !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">⚡ IT Команда</a>
+            <button class="btn btn-outline-secondary" id="themeToggle">🌓 Сменить тему</button>
+        </div>
+    </nav>
+
+    <!-- Главный блок -->
+    <div class="container my-5 py-5 text-center">
+        <h1 class="display-4 fw-bold mb-3">IT-Решения Нового Поколения</h1>
+        <p class="lead text-muted mb-4">Мы создаем современные сайты, умных ботов и цифровые продукты с помощью искусственного интеллекта.</p>
+        <button class="btn btn-primary btn-lg px-4 gap-3">🚀 Начать</button>
+    </div>
+
+    <!-- Карточки услуг -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">🌐  Веб-Разработка </h5>
+                        <p class="card-text">Чистый код на HTML/CSS/JS. Сайты загружаются мгновенно и отлично выглядят на любых экранах</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">🤖 Telegram Боты </h5>
+                        <p class="card-text">Умная автоматизация и интеграция ИИ для вашего бизнеса и каналов.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">🎨 UI/UX Дизайн </h5>
+                        <p class="card-text">Эстетичные темные и светлые интерфейсы, созданные под вашу аудиторию.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-body-tertiary text-center py-4 mt-5 border-top">
+        <p class="mb-0 text-muted">© 2026 Все права защищены. Создано с любовью.</p>
+    </footer>
+
+    <!-- JavaScript для смены темы (Светлая / Темная) -->
+    <script src="https://jsdelivr.net"></script>
+
+        <!-- Твой финальный рабочий JavaScript без бесячих окон -->
+        <!-- Исправленный JavaScript: переключает с первого клика без холостых нажатий -->
+    <script>
+        var themeToggleBtn = document.getElementById('themeToggle');
+        var htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', function() {
+            // Берем текущую тему (может быть 'dark', 'light' или вообще ничего)
+            var currentTheme = htmlElement.getAttribute('data-bs-theme');
+            
+            // Если сейчас тема СВЕТЛАЯ — включаем ТЕМНУЮ
+            if (currentTheme === 'light') {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                document.body.style.backgroundColor = '#212529';
+                document.body.style.color = '#ffffff';
+            } 
+            // В любых ВЫ ИНЫХ случаях (если там 'dark' или пустая строка при первой загрузке) — включаем СВЕТЛУЮ
+            else {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                document.body.style.backgroundColor = '#ffffff';
+                document.body.style.color = '#212529';
+            }
+        });
+    </script>
+
+</body>
+</html>
