@@ -7,11 +7,32 @@
     <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
-        /* Говорим браузеру плавно менять фон и текст у всего сайта */
-        body, .card, .navbar, h1, p, span, button {
-            transition: background-color 0.5s ease, color 0.5s ease !important;
-        }
+    /* Плавность для всего сайта */
+    body, .card, .navbar, h1, p, button {
+        transition: all 0.5s ease !important;
+    }
+    /* Делаем шапку полупрозрачной с эффектом размытия стекла */
+    .navbar {
+        backdrop-filter: blur(10px);
+        background-color: rgba(33, 37, 41, 0.7) !important;
+    }
+    /* Добавляем неоновое свечение кнопке и заголовку в темной теме */
+    [data-bs-theme="dark"] h1 {
+        text-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+        color: #00f2fe !important;
+    }
+    /* Футуристичные карточки с неоновой рамкой */
+    .card {
+        border: 1px solid rgba(0, 242, 254, 0.15) !important;
+        background: linear-gradient(145deg, rgba(33,37,41,1), rgba(25,28,31,1)) !important;
+    }
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2) !important;
+        border-color: #00f2fe !important;
+    }
     </style>
+
 </head>
 <body>
 
