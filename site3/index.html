@@ -7,11 +7,49 @@
     <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
-        /* Говорим браузеру плавно менять фон и текст у всего сайта */
-        body, .card, .navbar, h1, p, span, button {
-            transition: background-color 0.5s ease, color 0.5s ease !important;
-        }
+    /* Плавность для всего сайта */
+    body, .card, .navbar, h1, p, button {
+        transition: all 0.5s ease !important;
+    }
+    .card {
+        border-radius: 16px !important;
+    }
+
+    /* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (Дерзкий Уличный Неон) === */
+    [data-bs-theme="dark"] .btn-primary {
+        background: linear-gradient(90deg, #ff416c, #ff4b2b) !important;
+        border: none !important;
+    }
+    [data-bs-theme="dark"] .btn-primary:hover {
+        box-shadow: 0 5px 15px rgba(255, 65, 108, 0.5) !important;
+    }
+    [data-bs-theme="dark"] .card {
+        background-color: #2b3035 !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        color: #ffffff !important;
+    }
+    [data-bs-theme="dark"] .card:hover {
+        transform: skewX(-2deg) translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 75, 43, 0.25) !important;
+    }
+
+    /* === СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ (Чистый Спортивный Магазин) === */
+    [data-bs-theme="light"] .btn-primary {
+        background: #ff4b2b !important;
+        border: none !important;
+        color: #ffffff !important;
+    }
+    [data-bs-theme="light"] .card {
+        background-color: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        color: #212529 !important;
+    }
+    [data-bs-theme="light"] .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    }
     </style>
+
 </head>
 <body>
 

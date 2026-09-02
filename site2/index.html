@@ -7,11 +7,47 @@
     <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
-        /* Говорим браузеру плавно менять фон и текст у всего сайта */
-        body, .card, .navbar, h1, p, span, button {
-            transition: background-color 0.5s ease, color 0.5s ease !important;
-        }
+    /* Плавность для всего сайта */
+    body, .card, .navbar, h1, p, button {
+        transition: all 0.5s ease !important;
+    }
+
+    /* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (Кибер-Кофе) === */
+    [data-bs-theme="dark"] h1 {
+        background: linear-gradient(45deg, #b5835a, #e6b89c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    [data-bs-theme="dark"] .card {
+        border: none !important;
+        background-color: rgba(181, 131, 90, 0.08) !important;
+        color: #ffffff !important;
+    }
+    [data-bs-theme="dark"] .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(181, 131, 90, 0.2) !important;
+        background-color: rgba(181, 131, 90, 0.15) !important;
+    }
+
+    /* === СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ (Классическое кафе) === */
+    [data-bs-theme="light"] h1 {
+        color: #b5835a !important;
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+    [data-bs-theme="light"] .card {
+        background-color: #f8f9fa !important;
+        border: 1px solid rgba(181, 131, 90, 0.2) !important;
+        color: #212529 !important;
+    }
+    [data-bs-theme="light"] .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+        background-color: #ffffff !important;
+    }
     </style>
+
+
 </head>
 <body>
 
