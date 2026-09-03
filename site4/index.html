@@ -7,11 +7,48 @@
     <!-- ИСПРАВЛЕНО: Подключаем настоящий CSS Bootstrap 5.3 -->
     <link href="https://jsdelivr.net" rel="stylesheet">
     <style>
-        /* Говорим браузеру плавно менять фон и текст у всего сайта */
-        body, .card, .navbar, h1, p, span, button {
-            transition: background-color 0.5s ease, color 0.5s ease !important;
-        }
+    /* Плавность для всего сайта */
+    body, .card, .navbar, h1, p, button {
+        transition: all 0.5s ease !important;
+    }
+
+    /* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (Кислотная Сталь) === */
+    [data-bs-theme="dark"] .btn-primary {
+        background-color: #39ff14 !important;
+        color: #000000 !important;
+        border: none !important;
+        font-weight: bold;
+    }
+    [data-bs-theme="dark"] .btn-primary:hover {
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.5) !important;
+    }
+    [data-bs-theme="dark"] .card {
+        background-color: #25292d !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        color: #ffffff !important;
+    }
+    [data-bs-theme="dark"] .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* === СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ (Светлый Фитнес-Зал) === */
+    [data-bs-theme="light"] .btn-primary {
+        background-color: #0d6efd !important;
+        color: #ffffff !important;
+        border: none !important;
+    }
+    [data-bs-theme="light"] .card {
+        background-color: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        color: #212529 !important;
+    }
+    [data-bs-theme="light"] .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
+    }
     </style>
+
 </head>
 <body>
 

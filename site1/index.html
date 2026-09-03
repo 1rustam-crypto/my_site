@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Команда</title>
     <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
+    <!-- Вставь эту рабочую строчку: -->
     <link href="https://jsdelivr.net" rel="stylesheet">
+
     <style>
     /* Плавность для всего сайта */
     body, .card, .navbar, h1, p, button {
@@ -17,6 +19,12 @@
         background-color: rgba(33, 37, 41, 0.7) !important;
     }
     /* Добавляем неоновое свечение кнопке и заголовку в темной теме */
+
+    /* === ЭФФЕКТЫ ДЛЯ ТЕМНОЙ ТЕМЫ === */
+    [data-bs-theme="dark"] .navbar {
+        backdrop-filter: blur(10px);
+        background-color: rgba(33, 37, 41, 0.7) !important;
+    }
     [data-bs-theme="dark"] h1 {
         text-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
         color: #00f2fe !important;
@@ -27,11 +35,30 @@
         background: linear-gradient(145deg, rgba(33,37,41,1), rgba(25,28,31,1)) !important;
     }
     .card:hover {
+    [data-bs-theme="dark"] .card {
+        border: 1px solid rgba(0, 242, 254, 0.15) !important;
+        background: linear-gradient(145deg, rgba(33,37,41,1), rgba(25,28,31,1)) !important;
+    }
+    [data-bs-theme="dark"] .card:hover {
         transform: translateY(-8px);
         box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2) !important;
         border-color: #00f2fe !important;
     }
     </style>
+
+
+    /* === ЭФФЕКТЫ ДЛЯ СВЕТЛОЙ ТЕМЫ === */
+    [data-bs-theme="light"] .card {
+        background-color: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        color: #212529 !important;
+    }
+    [data-bs-theme="light"] .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+    </style>
+
 
 </head>
 <body>
