@@ -1,133 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru" data-bs-theme="dark">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кибер-Кофе</title>
-    <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <style>
-    /* Плавность для всего сайта */
-    body, .card, .navbar, h1, p, button {
-        transition: all 0.5s ease !important;
-    }
-
-    /* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (Кибер-Кофе) === */
-    [data-bs-theme="dark"] h1 {
-        background: linear-gradient(45deg, #b5835a, #e6b89c);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    [data-bs-theme="dark"] .card {
-        border: none !important;
-        background-color: rgba(181, 131, 90, 0.08) !important;
-        color: #ffffff !important;
-    }
-    [data-bs-theme="dark"] .card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 15px 30px rgba(181, 131, 90, 0.2) !important;
-        background-color: rgba(181, 131, 90, 0.15) !important;
-    }
-
-    /* === СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ (Классическое кафе) === */
-    [data-bs-theme="light"] h1 {
-        color: #b5835a !important;
-        background: none;
-        -webkit-text-fill-color: initial;
-    }
-    [data-bs-theme="light"] .card {
-        background-color: #f8f9fa !important;
-        border: 1px solid rgba(181, 131, 90, 0.2) !important;
-        color: #212529 !important;
-    }
-    [data-bs-theme="light"] .card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
-        background-color: #ffffff !important;
-    }
-    </style>
-
-
+    <title>Галерея</title>
+    <link rel="stylesheet" href="s.css">
 </head>
 <body>
-
-    <!-- Шапка сайта -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">☕ Кибер-Кофе</a>
-            <button class="btn btn-outline-secondary" id="themeToggle">🌓 Сменить тему</button>
-        </div>
-    </nav>
-
-    <!-- Главный блок -->
-    <div class="container my-5 py-5 text-center">
-        <h1 class="display-4 fw-bold mb-3">Заряди свой код премиальным кофе</h1>
-        <p class="lead text-muted mb-4">Обжариваем лучшие сорта для разработчиков, дизайнеров и полуночников. Открыты 24/7 в самом сердце цифрового города.</p>
-        <button class="btn btn-primary btn-lg px-4 gap-3">🚀 Начать</button>
-    </div>
-
-    <!-- Карточки услуг -->
-    <div class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">☕ Двойной Эспрессо </h5>
-                        <p class="card-text"> Чистая энергия, чтобы за секунду найти баг в самом сложном коде.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">.🥐 Кибер-Круассан</h5>
-                        <p class="card-text"> Свежая выпечка, чтобы твое рабочее утро начиналось правильно.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">🧊 Колд Брю</h5>
-                        <p class="card-text"> Мягкий кофе холодного заваривания для долгих мозговых штурмов.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <button id="themeToggle" class="theme-btn">🌙 Тёмная тема</button>
+        <h1>🖼️ Моя галерея</h1>
+        <div class="cards">
+            <div class="card"><img src="https://picsum.photos/300/200?random=1"><h3>Пейзаж</h3></div>
+            <div class="card"><img src="https://picsum.photos/300/200?random=2"><h3>Город</h3></div>
+            <div class="card"><img src="https://picsum.photos/300/200?random=3"><h3>Природа</h3></div>
+            <div class="card"><img src="https://picsum.photos/300/200?random=4"><h3>Закат</h3></div>
         </div>
     </div>
-
-    <!-- Подвал -->
-    <footer class="bg-body-tertiary text-center py-4 mt-5 border-top">
-        <p class="mb-0 text-muted">© 2026 Все права защищены. Создано с любовью.</p>
-    </footer>
-
-    <!-- JavaScript для смены темы (Светлая / Темная) -->
-    <script src="https://jsdelivr.net"></script>
-
-        <!-- Твой финальный рабочий JavaScript без бесячих окон -->
-        <!-- Исправленный JavaScript: переключает с первого клика без холостых нажатий -->
-    <script>
-        var themeToggleBtn = document.getElementById('themeToggle');
-        var htmlElement = document.documentElement;
-
-        themeToggleBtn.addEventListener('click', function() {
-            // Берем текущую тему (может быть 'dark', 'light' или вообще ничего)
-            var currentTheme = htmlElement.getAttribute('data-bs-theme');
-            
-            // Если сейчас тема СВЕТЛАЯ — включаем ТЕМНУЮ
-            if (currentTheme === 'light') {
-                htmlElement.setAttribute('data-bs-theme', 'dark');
-                document.body.style.backgroundColor = '#212529';
-                document.body.style.color = '#ffffff';
-            } 
-            // В любых ВЫ ИНЫХ случаях (если там 'dark' или пустая строка при первой загрузке) — включаем СВЕТЛУЮ
-            else {
-                htmlElement.setAttribute('data-bs-theme', 'light');
-                document.body.style.backgroundColor = '#ffffff';
-                document.body.style.color = '#212529';
-            }
-        });
-    </script>
-
+    <script src="s.js"></script>
 </body>
 </html>

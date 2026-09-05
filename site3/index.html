@@ -1,135 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru" data-bs-theme="dark">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СНИКЕР ДРОП</title>
-    <!-- Подключаем фреймворк Bootstrap 5 для визуала -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <style>
-    /* Плавность для всего сайта */
-    body, .card, .navbar, h1, p, button {
-        transition: all 0.5s ease !important;
-    }
-    .card {
-        border-radius: 16px !important;
-    }
-
-    /* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (Дерзкий Уличный Неон) === */
-    [data-bs-theme="dark"] .btn-primary {
-        background: linear-gradient(90deg, #ff416c, #ff4b2b) !important;
-        border: none !important;
-    }
-    [data-bs-theme="dark"] .btn-primary:hover {
-        box-shadow: 0 5px 15px rgba(255, 65, 108, 0.5) !important;
-    }
-    [data-bs-theme="dark"] .card {
-        background-color: #2b3035 !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        color: #ffffff !important;
-    }
-    [data-bs-theme="dark"] .card:hover {
-        transform: skewX(-2deg) translateY(-5px);
-        box-shadow: 0 10px 25px rgba(255, 75, 43, 0.25) !important;
-    }
-
-    /* === СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ (Чистый Спортивный Магазин) === */
-    [data-bs-theme="light"] .btn-primary {
-        background: #ff4b2b !important;
-        border: none !important;
-        color: #ffffff !important;
-    }
-    [data-bs-theme="light"] .card {
-        background-color: #ffffff !important;
-        border: 1px solid rgba(0, 0, 0, 0.1) !important;
-        color: #212529 !important;
-    }
-    [data-bs-theme="light"] .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
-    }
-    </style>
-
+    <title>Советы</title>
+    <link rel="stylesheet" href="s.css">
 </head>
 <body>
-
-    <!-- Шапка сайта -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">👟 СНИКЕР ДРОП</a>
-            <button class="btn btn-outline-secondary" id="themeToggle">🌓 Сменить тему</button>
-        </div>
-    </nav>
-
-    <!-- Главный блок -->
-    <div class="container my-5 py-5 text-center">
-        <h1 class="display-4 fw-bold mb-3">Шагни в будущее уличной моды</h1>
-        <p class="lead text-muted mb-4">Эксклюзивные кроссовки ограниченных серий. Футуристичный дизайн и максимальный комфорт. Не иди — беги.</p>
-        <button class="btn btn-primary btn-lg px-4 gap-3">🚀 Начать</button>
+    <div class="container">
+        <button id="themeToggle" class="theme-btn">🌙 Тёмная тема</button>
+        <h1>✨ Совет дня</h1>
+        <div class="card"><p id="advice">Нажми на кнопку</p></div>
+        <button id="generateBtn">Получить совет</button>
     </div>
-
-    <!-- Карточки услуг -->
-    <div class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">🚀 Кибер-Прогулка 2026 </h5>
-                        <p class="card-text"> Адаптивная неоновая подошва и ультралегкие материалы. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">🥷 Ночной Стелс </h5>
-                        <p class="card-text"> Матовый черный цвет. Идеально для ночных прогулок по городу.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">☁️ Облачная Пена </h5>
-                        <p class="card-text"> Самые мягкие кроссовки на каждый день. Ощущение, будто ходишь по облакам.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Подвал -->
-    <footer class="bg-body-tertiary text-center py-4 mt-5 border-top">
-        <p class="mb-0 text-muted">© 2026 Все права защищены. Создано с любовью.</p>
-    </footer>
-
-    <!-- JavaScript для смены темы (Светлая / Темная) -->
-    <script src="https://jsdelivr.net"></script>
-
-        <!-- Твой финальный рабочий JavaScript без бесячих окон -->
-        <!-- Исправленный JavaScript: переключает с первого клика без холостых нажатий -->
-    <script>
-        var themeToggleBtn = document.getElementById('themeToggle');
-        var htmlElement = document.documentElement;
-
-        themeToggleBtn.addEventListener('click', function() {
-            // Берем текущую тему (может быть 'dark', 'light' или вообще ничего)
-            var currentTheme = htmlElement.getAttribute('data-bs-theme');
-            
-            // Если сейчас тема СВЕТЛАЯ — включаем ТЕМНУЮ
-            if (currentTheme === 'light') {
-                htmlElement.setAttribute('data-bs-theme', 'dark');
-                document.body.style.backgroundColor = '#212529';
-                document.body.style.color = '#ffffff';
-            } 
-            // В любых ВЫ ИНЫХ случаях (если там 'dark' или пустая строка при первой загрузке) — включаем СВЕТЛУЮ
-            else {
-                htmlElement.setAttribute('data-bs-theme', 'light');
-                document.body.style.backgroundColor = '#ffffff';
-                document.body.style.color = '#212529';
-            }
-        });
-    </script>
-
+    <script src="s.js"></script>
 </body>
 </html>

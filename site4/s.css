@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    background: linear-gradient(145deg, #0b0e1a, #1a1f33);
+    color: #fff;
+    padding: 20px;
+}
+body.light { background: linear-gradient(145deg, #f5f7fa, #dce1ea); color: #222; }
+.container { text-align: center; max-width: 400px; width: 100%; position: relative; }
+.theme-btn {
+    position: absolute; top: -60px; right: 0;
+    padding: 8px 18px; border: none; border-radius: 30px;
+    cursor: pointer; background: rgba(255,255,255,0.1); color: #fff;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+body.light .theme-btn { background: rgba(0,0,0,0.08); color: #222; border-color: rgba(0,0,0,0.1); }
+h1 { font-size: 2.5rem; margin-bottom: 20px; }
+.card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; }
+body.light .card { background: rgba(255,255,255,0.6); border-color: rgba(0,0,0,0.08); }
+#display { font-size: 3rem; font-weight: bold; }
+button {
+    padding: 12px 30px; border: none; border-radius: 50px;
+    font-weight: bold; font-size: 1rem; cursor: pointer; margin: 5px;
+}
+#startBtn { background: #27ae60; color: #fff; }
+#resetBtn { background: #e74c3c; color: #fff; }

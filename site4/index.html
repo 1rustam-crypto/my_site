@@ -1,137 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru" data-bs-theme="dark">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стальная Цитадель</title>
-    <!-- ИСПРАВЛЕНО: Подключаем настоящий CSS Bootstrap 5.3 -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <style>
-    /* Плавность для всего сайта */
-    body, .card, .navbar, h1, p, button {
-        transition: all 0.5s ease !important;
-    }
-
-    /* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (Кислотная Сталь) === */
-    [data-bs-theme="dark"] .btn-primary {
-        background-color: #39ff14 !important;
-        color: #000000 !important;
-        border: none !important;
-        font-weight: bold;
-    }
-    [data-bs-theme="dark"] .btn-primary:hover {
-        box-shadow: 0 0 15px rgba(57, 255, 20, 0.5) !important;
-    }
-    [data-bs-theme="dark"] .card {
-        background-color: #25292d !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        color: #ffffff !important;
-    }
-    [data-bs-theme="dark"] .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.1) !important;
-    }
-
-    /* === СТИЛИ ДЛЯ СВЕТЛОЙ ТЕМЫ (Светлый Фитнес-Зал) === */
-    [data-bs-theme="light"] .btn-primary {
-        background-color: #0d6efd !important;
-        color: #ffffff !important;
-        border: none !important;
-    }
-    [data-bs-theme="light"] .card {
-        background-color: #ffffff !important;
-        border: 1px solid rgba(0, 0, 0, 0.1) !important;
-        color: #212529 !important;
-    }
-    [data-bs-theme="light"] .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
-    }
-    </style>
-
+    <title>Таймер</title>
+    <link rel="stylesheet" href="s.css">
 </head>
 <body>
-
-    <!-- Шапка сайта -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">🏋️‍♂️ СТАЛЬНАЯ ЦИТАДЕЛЬ</a>
-            <button class="btn btn-outline-secondary" id="themeToggle">🌓 Сменить тему</button>
-        </div>
-    </nav>
-
-    <!-- Главный блок -->
-    <div class="container my-5 py-5 text-center">
-        <h1 class="display-4 fw-bold mb-3">Построй несгибаемое тело и разум</h1>
-        <p class="lead text-muted mb-4">Никаких оправданий. Только результат. Премиальное оборудование, крутые тренеры и доступ 24/7 к твоей силе.</p>
-        <button class="btn btn-primary btn-lg px-4 gap-3">🚀 Начать</button>
-    </div>
-
-    <!-- Карточки услуг -->
-    <div class="container my-5">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">⚡ Зона Тяжелого Железа</h5>
-                        <p class="card-text">Свободные веса, гантели и брутальная атмосфера, чтобы раздвинуть твои границы.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">🏃‍♂️ Кардио Бит</h5>
-                        <p class="card-text">Современные беговые дорожки с экранами и киношными мотивирующими видами.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">🧘‍♂️ Комната Восстановления</h5>
-                        <p class="card-text">Глубокий релакс после тренировки: финские сауны и ледяные бассейны.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <button id="themeToggle" class="theme-btn">🌙 Тёмная тема</button>
+        <h1>⏱️ Таймер</h1>
+        <div class="card"><span id="display">00:00</span></div>
+        <div>
+            <button id="startBtn">Старт</button>
+            <button id="resetBtn">Сброс</button>
         </div>
     </div>
-
-    <!-- Подвал -->
-    <footer class="bg-body-tertiary text-center py-4 mt-5 border-top">
-        <p class="mb-0 text-muted">© 2026 Все права защищены. Создано с любовью.</p>
-    </footer>
-
-    <!-- ДОБАВЛЕНО: Родной JavaScript от Bootstrap, без него темы не переключаются автоматически -->
-    <script src="https://jsdelivr.net"></script>
-
-        <!-- Твой финальный рабочий JavaScript без бесячих окон -->
-        <!-- Исправленный JavaScript: переключает с первого клика без холостых нажатий -->
-    <script>
-        var themeToggleBtn = document.getElementById('themeToggle');
-        var htmlElement = document.documentElement;
-
-        themeToggleBtn.addEventListener('click', function() {
-            // Берем текущую тему (может быть 'dark', 'light' или вообще ничего)
-            var currentTheme = htmlElement.getAttribute('data-bs-theme');
-            
-            // Если сейчас тема СВЕТЛАЯ — включаем ТЕМНУЮ
-            if (currentTheme === 'light') {
-                htmlElement.setAttribute('data-bs-theme', 'dark');
-                document.body.style.backgroundColor = '#212529';
-                document.body.style.color = '#ffffff';
-            } 
-            // В любых ВЫ ИНЫХ случаях (если там 'dark' или пустая строка при первой загрузке) — включаем СВЕТЛУЮ
-            else {
-                htmlElement.setAttribute('data-bs-theme', 'light');
-                document.body.style.backgroundColor = '#ffffff';
-                document.body.style.color = '#212529';
-            }
-        });
-    </script>
-
-
-
-
+    <script src="s.js"></script>
 </body>
 </html>
